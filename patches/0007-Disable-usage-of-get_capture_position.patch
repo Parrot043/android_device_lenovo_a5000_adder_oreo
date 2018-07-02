@@ -1,0 +1,40 @@
+diff --git a/services/audioflinger/Threads.cpp b/services/audioflinger/Threads.cpp
+index 08ccc8e..e3599a3 100644
+--- a/services/audioflinger/Threads.cpp
++++ b/services/audioflinger/Threads.cpp
+@@ -6448,20 +6448,21 @@ reacquire_wakelock:
+         mTimestamp.mTimeNs[ExtendedTimestamp::LOCATION_SERVER] = systemTime();
+ 
+         // Update server timestamp with kernel stats
+-        if (mInput->stream->get_capture_position != nullptr
+-                && mPipeSource.get() == nullptr /* don't obtain for FastCapture, could block */) {
+-            int64_t position, time;
+-            int ret = mInput->stream->get_capture_position(mInput->stream, &position, &time);
+-            if (ret == NO_ERROR) {
+-                mTimestamp.mPosition[ExtendedTimestamp::LOCATION_KERNEL] = position;
+-                mTimestamp.mTimeNs[ExtendedTimestamp::LOCATION_KERNEL] = time;
+-                // Note: In general record buffers should tend to be empty in
+-                // a properly running pipeline.
+-                //
+-                // Also, it is not advantageous to call get_presentation_position during the read
+-                // as the read obtains a lock, preventing the timestamp call from executing.
+-            }
+-        }
++
++        // if (mInput->stream->get_capture_position != nullptr
++        //         && mPipeSource.get() == nullptr /* don't obtain for FastCapture, could block */) {
++        //     int64_t position, time;
++        //     int ret = mInput->stream->get_capture_position(mInput->stream, &position, &time);
++        //     if (ret == NO_ERROR) {
++        //         mTimestamp.mPosition[ExtendedTimestamp::LOCATION_KERNEL] = position;
++        //         mTimestamp.mTimeNs[ExtendedTimestamp::LOCATION_KERNEL] = time;
++        //         // Note: In general record buffers should tend to be empty in
++        //         // a properly running pipeline.
++        //         //
++        //         // Also, it is not advantageous to call get_presentation_position during the read
++        //         // as the read obtains a lock, preventing the timestamp call from executing.
++        //     }
++        // }
+         // Use this to track timestamp information
+         // ALOGD("%s", mTimestamp.toString().c_str());
+

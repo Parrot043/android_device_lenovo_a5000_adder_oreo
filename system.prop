@@ -1,0 +1,154 @@
+#
+# system.prop for Lenovo A5000
+#
+
+# MediaTek Chip
+ro.mediatek.chip_ver=S01
+ro.mediatek.version.release=ALPS.L0.MP2.V1.15_LCSH6582.W.L_P55
+ro.mediatek.platform=MT6582
+ro.mediatek.version.sdk=2
+ro.crypto.state=unencrypted
+
+# Tweaks
+profiler.force_disable_err_rpt=1
+ro.ril.enable.amr.wideband=1
+profiler.force_disable_ulog=1
+dalvik.vm.execution-mode=int:jit
+ro.min_pointer_dur=8
+ro.max.fling_velocity=12000
+ro.min.fling_velocity=8000
+video.accelerate.hw=1
+debug.performance.tuning=1
+ro.mot.eri.losalert.delay=1000
+persist.service.lgospd.enable=0
+persist.service.pcsync.enable=0
+touch.pressure.scale=0.003
+ro.config.hw_fast_dormancy=1
+ro.config.hw_power_saving=1
+
+# Telephony
+rild.libpath=/system/lib/mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+ril.specific.sm_cause=0
+ro.telephony.default_network=9
+persist.radio.multisim.config=dsds
+persist.radio.default.sim=0
+ril.flightmode.poweroffMD=1
+ril.telephony.mode=0
+ril.radiooff.poweroffMD=0
+ro.mtk_enable_md1=1
+ro.mtk_lte_support=1
+ro.telephony.ril_class=SproutRIL
+ro.telephony.ril.config=fakeiccid
+ro.telephony.sim.count=2
+ril.current.share_modem=2
+persist.radio.fd.counter=150
+persist.radio.fd.off.counter=50
+persist.radio.fd.r8.counter=150
+persist.radio.fd.off.r8.counter=50
+
+# WiFI
+wifi.supplicant_scan_interval=15
+wifi.interface=wlan0
+ro.hardware=sprout
+ro.mediatek.wlan.wsc=1
+ro.mediatek.wlan.p2p=1
+mediatek.wlan.ctia=0
+mediatek.wlan.chip=CONSYS_MT6582
+mediatek.wlan.module.postfix=_consys_mt6582
+wifi.tethering.interface=ap0
+wifi.direct.interface=p2p0
+
+# Audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+# GPS
+ro.mtk_agps_app=1
+ro.mtk_gps_support=1
+ro.mtk_omacp_support=1
+
+# USB
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp,adb
+ro.sys.usb.bicr=no
+ro.sys.usb.charging.only=yes
+ro.vold.umsdirtyratio=20
+
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
+
+# Kernel
+ro.zygote.preload.enable=0
+ro.kernel.zio=38,108,105,16
+ro.boot.selinux=disable
+
+# Display
+ro.sf.lcd_density=320
+debug.egl.hw=1
+debug.egl.profiler=1
+qemu.hw.mainkeys=1
+ro.opengles.version=131072
+
+# Disable dirty region for Mali
+debug.hwui.render_dirty_regions=false
+
+# Media / DRM
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+persist.media.treble_omx=false
+drm.service.enabled=true
+ro.mtk_oma_drm_support=1
+ro.mtk_widevine_drm_l3_support=1
+audio.decoder_override_check=true
+use.non-omx.mp3.decoder=false
+use.non-omx.aac.decoder=false
+lpa.decode=false
+
+# Memory TRIM
+ro.sys.fw.use_trim_settings=true
+ro.sys.fw.empty_app_percent=50
+ro.sys.fw.trim_empty_percent=100
+ro.sys.fw.trim_cache_percent=100
+ro.sys.fw.trim_enable_memory=1073741824
+
+#Video
+ro.media.dec.aud.flac.enabled=1
+ro.media.dec.vid.avi.enabled=1
+ro.media.dec.aud.wma.enabled=1
+ro.media.dec.vid.wmv.enabled=1
+ro.media.cam.preview.fps=0
+ro.media.codec_priority_for_thumb=so
+
+# Performance
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+dalvik.vm.checkjni=false
+usb_wakeup=enable
+proximity_incall=enable
+power_supply.wakeup=enable
+ro.com.google.locationfeatures=1
+ro.com.google.networklocation=1
+
+# Power save
+ro.ril.disable.power.collapse=1
+pm.sleep_mode=1
+wifi.supplicant_scan_interval=180
+ro.config.hw_power_saving=1
+ro.ril.power_collapse=1
+ro.ril.disable.power.collapse=0
+
+# Use Google DNS
+net.dns1=8.8.8.8
+net.dns2=8.8.4.4
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
+net.ppp0.dns1=8.8.8.8
+net.ppp0.dns2=8.8.4.4
+net.wlan0.dns1=8.8.8.8
+net.wlan0.dns2=8.8.4.4
+net.eth0.dns1=8.8.8.8
+net.eth0.dns2=8.8.4.4
+net.gprs.dns1=8.8.8.8
+net.gprs.dns2=8.8.4.4
