@@ -139,6 +139,9 @@ ro.config.hw_power_saving=1
 ro.ril.power_collapse=1
 ro.ril.disable.power.collapse=0
 
+# Enable Camera2 API
+persist.camera.HAL3.enabled=1
+
 # Use Google DNS
 net.dns1=8.8.8.8
 net.dns2=8.8.4.4
